@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OJS - Sistema de Revistas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">OJS</h1>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#revistas">Revistas</a>
+                <a href="#buscar">Buscar</a>
+                <a href="#acerca">Acerca</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h2>Sistema de Revistas Académicas</h2>
+                <p>Plataforma para la gestión y publicación de revistas científicas</p>
+            </div>
+        </section>
+
+        <section id="revistas" class="revistas-section">
+            <div class="container">
+                <h2>Revistas Disponibles</h2>
+                <div class="filtros">
+                    <input type="text" id="buscarRevista" placeholder="Buscar revista..." class="search-input">
+                    <select id="filtroCategoria" class="filtro-select">
+                        <option value="">Todas las categorías</option>
+                        <option value="ciencias">Ciencias</option>
+                        <option value="humanidades">Humanidades</option>
+                        <option value="tecnologia">Tecnología</option>
+                    </select>
+                </div>
+                <div id="listaRevistas" class="revistas-grid"></div>
+            </div>
+        </section>
+
+        <section id="articulos" class="articulos-section" style="display: none;">
+            <div class="container">
+                <button id="volverRevistas" class="btn-volver">← Volver a Revistas</button>
+                <div id="detalleRevista" class="detalle-revista"></div>
+                <div id="listaArticulos" class="articulos-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sistema de Revistas OJS</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

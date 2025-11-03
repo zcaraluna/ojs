@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #2c3e50;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Revistas Section */
+.revistas-section {
+    padding: 3rem 0;
+}
+
+.revistas-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.filtros {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.search-input,
+.filtro-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-input:focus,
+.filtro-select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Revistas Grid */
+.revistas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.revista-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.revista-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.revista-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.revista-card .categoria {
+    display: inline-block;
+    background-color: #e8f4f8;
+    color: #2c3e50;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.revista-card .descripcion {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.revista-card .info {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Artículos Section */
+.articulos-section {
+    padding: 3rem 0;
+}
+
+.btn-volver {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: #5568d3;
+}
+
+.detalle-revista {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detalle-revista h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.detalle-revista p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.articulos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.articulo-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+}
+
+.articulo-item:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.articulo-item h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.articulo-item .autores {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.articulo-item .resumen {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.articulo-item .meta {
+    display: flex;
+    gap: 1rem;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.articulo-item .meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .revistas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros {
+        flex-direction: column;
+    }
+}
+
