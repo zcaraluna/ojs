@@ -1,24 +1,106 @@
 # OJS - Sistema de Revistas Académicas
 
-Esta es una demostración básica de cómo funciona OJS (Open Journal Systems). La página muestra una interfaz simple para navegar por revistas y sus artículos.
+Aplicación Next.js 16.0.1 para demostración de cómo funciona OJS (Open Journal Systems). Plataforma moderna para navegar por revistas académicas y sus artículos.
+
+## Tecnologías
+
+- **Next.js 16.0.1** - Framework React con App Router
+- **React 18** - Biblioteca de UI
+- **TypeScript** - Tipado estático
+- **PM2** - Gestor de procesos para producción
+
+## Instalación
+
+1. Instalar dependencias:
+```bash
+npm install
+```
+
+2. Ejecutar en desarrollo:
+```bash
+npm run dev
+```
+La aplicación estará disponible en `http://localhost:6369`
+
+3. Compilar para producción:
+```bash
+npm run build
+```
+
+4. Ejecutar en producción:
+```bash
+npm start
+```
+
+## Gestión con PM2
+
+### Iniciar aplicación con PM2:
+```bash
+pm2 start ecosystem.config.js
+```
+
+### Comandos PM2 útiles:
+```bash
+# Ver estado
+pm2 status
+
+# Ver logs
+pm2 logs ojs-nextjs
+
+# Reiniciar
+pm2 restart ojs-nextjs
+
+# Detener
+pm2 stop ojs-nextjs
+
+# Eliminar del listado
+pm2 delete ojs-nextjs
+
+# Configurar inicio automático
+pm2 startup
+pm2 save
+```
+
+## Configuración
+
+- **Puerto**: 6369 (configurado en `package.json` y `ecosystem.config.js`)
+- **Puerto de desarrollo**: 6369
+- **Puerto de producción**: 6369
 
 ## Estructura del Proyecto
 
-- `index.html` - Página principal
-- `styles.css` - Estilos de la interfaz
-- `app.js` - Lógica y datos de ejemplo
-- `README.md` - Este archivo
+```
+ojs/
+├── app/
+│   ├── components/      # Componentes React
+│   │   ├── Header.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Footer.tsx
+│   │   ├── RevistasGrid.tsx
+│   │   └── ArticulosList.tsx
+│   ├── data/           # Datos y utilidades
+│   │   └── revistas.ts
+│   ├── styles/         # Estilos globales
+│   │   └── globals.css
+│   ├── layout.tsx      # Layout principal
+│   └── page.tsx        # Página principal
+├── ecosystem.config.js # Configuración PM2
+├── next.config.js      # Configuración Next.js
+├── package.json
+└── tsconfig.json
+```
 
-## Cómo Usar
+## Funcionalidades
 
-1. Abre `index.html` en tu navegador
-2. Navega por las revistas disponibles
-3. Haz clic en una revista para ver sus artículos
-4. Usa el buscador y filtros para encontrar revistas específicas
+- Navegación por revistas académicas
+- Búsqueda y filtrado por categoría
+- Visualización de artículos por revista
+- Diseño responsivo y moderno
+- Interfaz minimalista
 
 ## Implementar OJS Real
 
-Para implementar Open Journal Systems real en tu servidor web, necesitas:
+Para implementar Open Journal Systems real en tu servidor web:
 
 ### Requisitos Previos
 
@@ -41,7 +123,7 @@ Para implementar Open Journal Systems real en tu servidor web, necesitas:
    - Los directorios `public/`, `cache/`, `cache/t_cache/`, `cache/t_compile/` y `cache/_db` deben ser escribibles (permisos 755 o 775)
 
 4. **Instalación vía web**
-   - Accede a la URL donde subiste OJS (ej: `https://tudominio.com/ojs`)
+   - Accede a la URL donde subiste OJS
    - Sigue el asistente de instalación:
      - Configura la conexión a la base de datos
      - Establece idiomas
@@ -57,7 +139,7 @@ Para implementar Open Journal Systems real en tu servidor web, necesitas:
 
 OJS puede integrarse de varias formas:
 
-1. **Instalación independiente**: OJS en un subdirectorio (ej: `/ojs`) y enlaces desde tu sitio principal
+1. **Instalación independiente**: OJS en un subdirectorio y enlaces desde tu sitio principal
 
 2. **Integración temática**: Personalizar el tema de OJS para que coincida con el diseño de tu sitio
 
@@ -65,11 +147,20 @@ OJS puede integrarse de varias formas:
 
 4. **Widgets/iframe**: Embebed contenido de OJS en páginas de tu sitio mediante iframes o widgets
 
-### Recursos Adicionales
+## Recursos Adicionales
 
-- **Documentación oficial**: https://docs.pkp.sfu.ca/
+- **Documentación oficial OJS**: https://docs.pkp.sfu.ca/
 - **Comunidad OJS**: https://forum.pkp.sfu.ca/
 - **Traducciones**: https://github.com/pkp/pkp-lib
+- **Documentación Next.js**: https://nextjs.org/docs
+
+## Desarrollo
+
+Este proyecto utiliza:
+- **App Router** de Next.js 13+ para routing
+- **Server Components** y **Client Components** según necesidad
+- **TypeScript** para type safety
+- **CSS Modules** para estilos globales
 
 ## Notas
 
@@ -81,4 +172,3 @@ Esta demostración es una versión simplificada que muestra el concepto básico 
 - Gestión de archivos y documentos
 - Estadísticas y métricas
 - Y mucho más
-
