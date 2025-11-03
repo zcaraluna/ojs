@@ -4,6 +4,7 @@ module.exports = {
     script: 'npm',
     args: 'start',
     cwd: '/home/bitcanc/web/ojs.s1mple.cloud/public_html',
+    exec_mode: 'fork',
     instances: 1,
     autorestart: true,
     watch: false,
